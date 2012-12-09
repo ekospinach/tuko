@@ -1,0 +1,410 @@
+
+/* Body and structure
+-------------------------------------------------- */
+body {
+  position: relative;
+  background-color: #fff;
+}
+
+/* Page Heading
+-------------------------------------------------- */
+.pagehead h1 {
+  margin: 0px;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 28px;
+  letter-spacing: -1px;
+  color: rgb(73, 89, 97);
+  z-index: 0;
+  padding-bottom: 8px;
+}
+
+/* Tweak navbar brand link to be super sleek
+-------------------------------------------------- */
+.navbar .brand {
+  padding: 12px 20px 12px;
+  font-size: 16px;
+  color: #000000;
+  font-weight: bold;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+          transition: all .2s linear;
+}
+.navbar .brand:hover {
+  color: #4083C4;
+  text-decoration: none;
+}
+
+/* Navbar
+-------------------------------------------------- */
+.navbar .navbar-inner-bap {
+  min-height: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #fff !important;
+  background-color: #f7f7f7;
+  background-image: -moz-linear-gradient(top, #f9f9f9, #f3f3f3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#f3f3f3));
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #f3f3f3);
+  background-image: -o-linear-gradient(top, #f9f9f9, #f3f3f3);
+  background-image: linear-gradient(to bottom, #f9f9f9, #f3f3f3);
+  background-repeat: repeat-x;
+  border-bottom: 1px solid #e5e5e5;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#fff3f3f3', GradientType=0);
+  *zoom: 1;
+}
+
+.navbar .navbar-inner-bap:before,
+.navbar .navbar-inner-bap:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.navbar .navbar-inner-bap:after {
+  clear: both;
+}
+
+.navbar .navbar-inner-bap li.name img {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin: -2px 5px 0 0px;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0px 1px 0px #ffffff;
+}
+
+.navbar .navbar-inner-bap .nav {
+  margin-top: 2px;
+}
+.navbar .navbar-inner-bap li a {
+  padding-right: 8px;
+  padding-left: 8px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.navbar .navbar-inner-bap li a:hover {
+  color: #4083C4;
+}
+
+.navbar-static-top .navbar-inner-bap {
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+
+.navbar-fixed-top .navbar-inner-bap {
+  border-width: 0 0 1px;
+}
+
+.navbar-fixed-top .navbar-inner-bap {
+  padding-right: 0;
+  padding-left: 0;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+
+/* Navtabs
+-------------------------------------------------- */
+.nav-tabs li.active {
+  font-weight: bold;
+  color: #333333;
+}
+
+.nav-tabs li a {
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #666666;
+}
+
+/* Login Form
+-------------------------------------------------- */
+.form-signin {
+  max-width: 350px;
+  margin: 80px auto 40px;
+  background-color: #fff;
+}
+.form-signin h2 {
+  text-align: center;
+}
+.form-signin form {
+  border: 1px solid #e5e5e5;
+  padding: 30px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+
+/* Sidebar
+-------------------------------------------------- */
+.nav-sidebar {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: -10px;
+  margin-bottom: 0;
+}
+.nav-sidebar .nav-header {
+  padding: 3px 0;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.nav-sidebar > li > a {
+  padding: 3px 5px;
+}
+.nav-sidebar.black > li > a {
+  padding: 3px 5px;
+  color: #333333;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #0088cc;
+}
+.nav-sidebar.black > .active > a,
+.nav-sidebar.black > .active > a:hover {
+  color: #333333;
+  text-shadow: none;
+  background-color: #E0E0E0;
+}
+.nav-sidebar [class^="icon-"],
+.nav-sidebar [class*=" icon-"] {
+  margin-right: 2px;
+}
+.nav-sidebar .divider {
+  *width: 100%;
+  height: 1px;
+  margin: 8px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+
+/* Nav Jewel
+-------------------------------------------------- */
+ul.nav-jewel {
+  position: relative;
+  margin: 10px 0 0px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #eaeaea;
+  background-image: linear-gradient(#fafafa, #eaeaea);
+  background-repeat: repeat-x;
+  border-color: #eaeaea #eaeaea #cacaca;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px 3px 3px 3px;
+  border-image: none;
+}
+
+ul.nav-jewel li {
+  display: table-cell;
+  width: 1%;
+  margin: 0;
+  list-style-type: none;
+}
+
+ul.nav-jewel li a {
+  display: block;
+  line-height: 35px;
+  color: #777777;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 0px white;
+  border-right: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 2px solid #dadada;
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+ul.nav-jewel li:first-child a:hover,
+ul.nav-jewel li:first-child a.selected {
+  border-top-left-radius: 3px;
+}
+
+ul.nav-jewel li a.selected,
+ul.nav-jewel li a.selected:hover {
+  color: #000000;
+  background-color: #ebebeb;
+  background-image: linear-gradient(#fcfcfc, #ebebeb);
+  background-repeat: repeat-x;
+  border-bottom: 2px solid #d26911;
+}
+
+ul.nav-jewel li a:hover {
+  color: #4183c4;
+  background-color: #dce6ef;
+  background-image: linear-gradient(#fafbfd, #dce6ef);
+  background-repeat: repeat-x;
+  border-bottom: 2px solid #cfdce8;
+}
+
+/* Blog
+-------------------------------------------------- */
+.blog-post {
+  margin-bottom: 40px;
+  border-top: 1px solid rgb(238, 238, 238);
+}
+.blog-post .top-rule {
+  margin-bottom: 16px;
+  width: 16px;
+  border-top: 2px solid rgb(238, 238, 238);
+}
+.blog-post .meta {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+.blog-post .meta .published {
+    margin-right: 15px;
+    color: rgb(153, 153, 153);
+}
+
+.blog-post h2.title {
+  margin: 0px 0px 10px;
+  font-size: 26px;
+  font-weight: normal;
+}
+.blog-post .markdown-body {
+  font-size: 14px;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+
+/* Footer
+-------------------------------------------------- */
+footer {
+  position: relative;
+  padding: 20px 0;
+  margin: 40px 0 0px;
+  color: #777777;
+  text-shadow: 0px 1px 0px #ffffff;
+  background-color: #f5f5f5;
+  background-color: #F5F5F5;
+  border-top: 1px solid #e5e5e5;
+}
+
+footer .sitemap dl dt {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #52595d;
+}
+
+footer .sitemap dl dd + dt {
+  margin-top: 18px;
+}
+
+footer .sitemap dl dd {
+  margin-left: 0;
+}
+
+footer .footer-divider {
+  margin: 0 0px 20px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+
+footer ul#legal {
+  margin: 0;
+  list-style: none outside none;
+}
+
+footer ul#legal li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+footer ul#legal a:hover {
+  text-decoration: none;
+}
+
+
+/* Responsive Docs
+-------------------------------------------------- */
+@media (max-width: 480px) {
+
+  /* Reduce padding above jumbotron */
+  body {
+    padding-top: 70px;
+  }
+
+  /* Change up some type stuff */
+  h2 {
+    margin-top: 27px;
+  }
+  h2 small {
+    display: block;
+    line-height: 18px;
+  }
+  h3 {
+    margin-top: 18px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+
+  /* Unfloat the back to top link in footer */
+  footer .pull-right {
+    float: none;
+  }
+  footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  footer p {
+    margin-bottom: 9px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 980px) {
+
+  /* Unfloat brand */
+  .navbar-fixed-top .brand {
+    float: left;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Inline-block quick links for more spacing */
+  .quick-links li {
+    display: inline-block;
+    margin: 5px;
+  }
+}
