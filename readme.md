@@ -1,1 +1,1 @@
-# [Tuko CMS](http://tukocms.com) - Bloging is Fun
+# [Tuko CMS](http://tukocms.com) - Blogging is Fun
