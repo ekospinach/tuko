@@ -70,9 +70,9 @@ return array(
 		'mysql' => array(
 			'driver'   => 'mysql',
 			'host'     => 'localhost',
-			'database' => 'wordpress',
-			'username' => 'root',
-			'password' => 'neki',
+			'database' => '',
+			'username' => '',
+			'password' => '',
 			'charset'  => 'utf8',
 			'prefix'   => 'tuko_',
 		),
