@@ -21,6 +21,7 @@
             <h1>{{ __($module.'title.update') }}</h1>
         </div>
         @include('content::admin.navtabs')
+        {{ HTML::error() }}
         @include($module.'_update')
     </div>
 </div>

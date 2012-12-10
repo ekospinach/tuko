@@ -108,7 +108,7 @@ class Content_Admin_Categories_Controller extends Base_Controller {
         $val = Validator::make(Input::all(), $rules);
 
         if ($val->fails()) {
-            return Redirect::to('admin/categories')
+            return Redirect::to('admin/categories/'.$id)
                     ->with('error', $val->errors->all());
         } else {
 
