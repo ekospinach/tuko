@@ -17,6 +17,7 @@ return array(
     ),
     'categories' => array(
         'title' => array(
+            'index'     => 'Pengaturan Kategori',
             'insert'    => 'Tambahkan Kategori Baru',
             'update'    => 'Perbaharui Kategori',
             'delete'    => 'Hapus Kategori'

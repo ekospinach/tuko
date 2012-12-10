@@ -8,18 +8,20 @@
         </tr>
     </thead>
     <tbody>
+@if ($categories)
+    @foreach ($categories as $cat)
         <tr>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-        </tr>
-         <tr>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
+            <td>{{ HTML::link('/admin/categories/'.$cat->id,$cat->name) }}</td>
+            <td>{{ $cat->description }}</td>
+            <td>{{ $cat->slug }}</td>
             <td>data</td>
         </tr>
+    @endforeach
+@else
+        <tr>
+            <td colspan="4" class="alert">&nbsp;</td>
+        </tr>
+@endif
     </tbody>
 </table>
 

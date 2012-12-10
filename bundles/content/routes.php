@@ -1,31 +1,61 @@
 <?php
 
 Route::get('admin/content', array(
-    'uses' => 'content::admin.blog@index'
+    'before'    => 'auth',
+    'uses'      => 'content::admin.blog@index'
 ));
 
 /* Blog Posting
  ---------------------------------------------------- */
 Route::get('admin/post', array(
-    'uses' => 'content::admin.blog@index'
+    'before'    => 'auth',
+    'uses'      => 'content::admin.blog@index'
 ));
 
 Route::get('admin/post/insert', array(
-    'uses' => 'content::admin.blog@insert'
+    'before'    => 'auth',
+    'uses'      => 'content::admin.blog@insert'
 ));
 
 Route::get('admin/post/update', array(
-    'uses' => 'content::admin.blog@update'
+    'uses'      => 'content::admin.blog@update'
 ));
 
 /* Categories
  ---------------------------------------------------- */
 Route::get('admin/categories', array(
-    'uses' => 'content::admin.categories@index'
+    'before'    => 'auth',
+    'uses'      => 'content::admin.categories@index'
+));
+
+Route::get('admin/categories/search/(:any?)', array(
+    'before'    => 'auth',
+    'uses'      => 'content::admin.categories@search'
+));
+
+Route::post('admin/categories', array(
+    'before'    => 'auth|csrf',
+    'uses'      => 'content::admin.categories@insert'
+));
+
+Route::get('admin/categories/(:num?)', array(
+    'before'    => 'auth',
+    'uses'      => 'content::admin.categories@get'
+));
+
+Route::post('admin/categories/(:num?)', array(
+    'before'    => 'auth|csrf',
+    'uses'      => 'content::admin.categories@update'
+));
+
+Route::post('admin/categories/(:num?)/delete', array(
+    'before'    => 'auth|csrf',
+    'uses'      => 'content::admin.categories@delete'
 ));
 
 /* Tags
  ---------------------------------------------------- */
 Route::get('admin/tags', array(
-    'uses' => 'content::admin.tags@index'
+    'before'    => 'auth',
+    'uses'      => 'content::admin.tags@index'
 ));

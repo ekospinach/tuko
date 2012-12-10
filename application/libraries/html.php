@@ -27,4 +27,23 @@ class HTML extends \Laravel\HTML {
 
         return '<a href="'.$url.'"'.static::attributes($attributes).'>'.$title.'</a>';
     }
+
+    /**
+     * Display error
+     *
+     * @return string
+     */
+    public static function error()
+    {
+        if (\Laravel\Session::get('error')) {
+            if (is_array(\Laravel\Session::get('error'))) {
+                return '<div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>'
+                            .implode('<br />', \Laravel\Session::get('error')).
+                        '</div>';
+            } else {
+                return \Laravel\Session::get('error');
+            }
+        }
+    }
 }

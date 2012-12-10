@@ -1,7 +1,7 @@
 @layout('themes::admin.main')
 
 @section('title')
-{{ __($module.'title.index') }}
+{{ __($module.'title.update') }}
 @endsection
 
 @section('css')
@@ -18,22 +18,10 @@
     </div>
     <div class="span10">
         <div class="pagehead">
-            <h1>{{ __($module.'title.index') }}</h1>
+            <h1>{{ __($module.'title.update') }}</h1>
         </div>
-
         @include('content::admin.navtabs')
-
-        <div class="row">
-            <div class="span3">
-                <h4>{{ __($module.'title.insert') }}</h4>
-                {{ HTML::error() }}
-
-                @include($module.'_insert')
-            </div>
-            <div class="span7">
-                @include($module.'_table')
-            </div>
-        </div>
+        @include($module.'_update')
     </div>
 </div>
 @endsection

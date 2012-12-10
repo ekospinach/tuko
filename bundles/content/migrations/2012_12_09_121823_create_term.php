@@ -13,9 +13,9 @@ class Content_Create_Term {
 		{
 			$table->create();
 			$table->int('id', true);
-			$table->varchar('name','200');
+			$table->varchar('name','200')->unique();
 			$table->text('description')->nullable();
-			$table->varchar('slug');
+			$table->varchar('slug')->unique();
 			$table->varchar('type','200');
 			$table->int('parent')->default('0');
 			$table->int('count')->default('0');
