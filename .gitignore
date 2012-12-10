@@ -44,3 +44,5 @@ Capfile
 config/contek.rb
 
 config/deploys.rb
+
+application/config/database.php
