@@ -31,14 +31,14 @@ Insert New Post
         </div>
 
         <div class="row">
-            <div id="content-editor" class="span10">
+            <div id="content-editor" class="span7">
                 {{ Form::open() }}
                     <input type="text" name="title" placeholder="Enter title Hire" class="input-block-level">
                     <textarea id="content" name="content" style="height: 300px;"></textarea>
                 {{ Form::close() }}
             </div>
 
-            <div id="content-actions" class="span3 hide">
+            <div id="content-actions" class="span3">
                 Every site has different requirements. When purchasing Blocks, you choose which features you need, so you don't have to pay for the ones you don't.
             </div>
         </div>
