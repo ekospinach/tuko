@@ -12,16 +12,26 @@ $navtabs = [
 @foreach($navtabs as $key => $value)
     @if (URI::segment(2) == 'content')
         @if ($key == 'post')
-            <li class="active">{{ HTML::link('admin/'.$key.'?sidebar=content','<i class="icon '.$value['0'].'"></i> '.$value['1']) }}</li>
+            <li class="active">
+                {{ HTML::link('admin/'.$key,'<i class="icon '.$value['0'].'"></i> '.$value['1']) }}
+            </li>
         @else
-            <li>{{ HTML::link('admin/'.$key.'?sidebar=content','<i class="icon '.$value['0'].'"></i> '.$value['1']) }}</li>
+            <li>
+                {{ HTML::link('admin/'.$key,'<i class="icon '.$value['0'].'"></i> '.$value['1']) }}
+            </li>
         @endif
     @else
         @if (URI::segment(2) == $key)
-            <li class="active">{{ HTML::link('admin/'.$key.'?sidebar=content','<i class="icon '.$value['0'].'"></i> '.$value['1']) }}</li>
+            <li class="active">
+                {{ HTML::link('admin/'.$key,'<i class="icon '.$value['0'].'"></i> '.$value['1']) }}
+            </li>
         @else
-            <li>{{ HTML::link('admin/'.$key.'?sidebar=content','<i class="icon '.$value['0'].'"></i> '.$value['1']) }}</li>
+            <li>
+                {{ HTML::link('admin/'.$key,'<i class="icon '.$value['0'].'"></i> '.$value['1']) }}
+            </li>
         @endif
     @endif
 @endforeach
 </ul>
+
+<?php unset($navtabs);?>

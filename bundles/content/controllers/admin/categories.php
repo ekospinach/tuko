@@ -7,6 +7,7 @@ class Content_Admin_Categories_Controller extends Base_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->data['sidebar']  = 'content';
         $this->data['module']   = $this->module;
     }
 
