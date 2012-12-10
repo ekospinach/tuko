@@ -70,6 +70,12 @@ class Content_Admin_Categories_Controller extends Base_Controller {
         }
     }
 
+    /**
+     * Get category data
+     *
+     * @param  int $id
+     * @return mixed
+     */
     public function get_get($id)
     {
         $term = Term::where('id','=',$id)->where('type','=','category')->first();
@@ -83,6 +89,12 @@ class Content_Admin_Categories_Controller extends Base_Controller {
 
     }
 
+    /**
+     * Update category data
+     *
+     * @param  int $id
+     * @return mixed
+     */
     public function post_update($id)
     {
          $rules = array(
