@@ -1,8 +1,8 @@
 <?php
 
-class Content_Admin_Blog_Controller extends Base_Controller {
+class Content_Admin_Post_Controller extends Base_Controller {
 
-    private $module = 'content::admin.blog.';
+    private $module = 'content::admin.post.';
 
     public function __construct()
     {

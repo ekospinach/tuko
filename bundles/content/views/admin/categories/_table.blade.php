@@ -11,10 +11,10 @@
 @if ($categories)
     @foreach ($categories as $cat)
         <tr>
-            <td>{{ HTML::link('/admin/categories/'.$cat->id,$cat->name) }}</td>
+            <td>{{ $cat->id == '1' ? $cat->name : HTML::link('/admin/categories/'.$cat->id,$cat->name) }}</td>
             <td>{{ $cat->description }}</td>
             <td>{{ $cat->slug }}</td>
-            <td>data</td>
+            <td>{{ $cat->count }}</td>
         </tr>
     @endforeach
 @else

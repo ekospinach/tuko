@@ -41,9 +41,7 @@
             {{ __($module.'field.description.label') }}
         </label>
         <div class="controls">
-            <textarea id="description" name="description" placeholder="{{ __($module.'field.description.placeholder') }}" rows="6" class="span5">
-                {{ $category->description }}
-            </textarea>
+            <textarea id="description" name="description" placeholder="{{ __($module.'field.description.placeholder') }}" rows="6" class="span5">{{ $category->description }}</textarea>
             <span class="help-block">
                 {{ __($module.'field.description.help') }}
             </span>
@@ -51,5 +49,6 @@
     </div>
 
     <button type="submit" class="btn btn-primary">{{ __($module.'btn.update') }}</button>
+    <button type="button" id="btn-delete" class="btn btn-danger">{{ __($module.'btn.delete') }}</button>
 
 {{ Form::close() }}

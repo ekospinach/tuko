@@ -26,3 +26,18 @@
     </div>
 </div>
 @endsection
+
+@section('js')
+    @parent
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btn-delete').click(function(){
+                if (confirm('{{ __($module."title.confirm")." ".$category->name." ?" }}')) {
+                    $.post('',{
+
+                    })
+                }
+            })
+        });
+    </script>
+@endsection

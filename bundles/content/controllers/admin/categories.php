@@ -80,7 +80,7 @@ class Content_Admin_Categories_Controller extends Base_Controller {
     {
         $term = Term::where('id','=',$id)->where('type','=','category')->first();
 
-        if ($term) {
+        if ($term && $id != '1') {
             $this->data['category'] = $term;
             return view($this->module.'update', $this->data);
         } else {
@@ -97,13 +97,10 @@ class Content_Admin_Categories_Controller extends Base_Controller {
      */
     public function post_update($id)
     {
-         $rules = array(
-            'name' => 'required|unique:terms'
+        $rules = array(
+            'name' => 'required',
+            'slug' => 'required'
         );
-
-        if (Input::get('slug')) {
-            $rules['slug'] = 'required|unique:terms';
-        }
 
         $val = Validator::make(Input::all(), $rules);
 
@@ -114,7 +111,7 @@ class Content_Admin_Categories_Controller extends Base_Controller {
 
             $term = Term::where('id','=',$id)->where('type','=','category')->first();
 
-            if ($term) {
+            if ($term && $id != '1') {
                 $term->name = Input::get('name');
                 $term->slug = Str::slug(Input::get('slug') ? : Input::get('name'));
                 $term->parent = Input::get('parent');

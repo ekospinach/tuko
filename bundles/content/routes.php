@@ -2,23 +2,23 @@
 
 Route::get('admin/content', array(
     'before'    => 'auth',
-    'uses'      => 'content::admin.blog@index'
+    'uses'      => 'content::admin.post@index'
 ));
 
-/* Blog Posting
+/* post Posting
  ---------------------------------------------------- */
 Route::get('admin/post', array(
     'before'    => 'auth',
-    'uses'      => 'content::admin.blog@index'
+    'uses'      => 'content::admin.post@index'
 ));
 
 Route::get('admin/post/insert', array(
     'before'    => 'auth',
-    'uses'      => 'content::admin.blog@insert'
+    'uses'      => 'content::admin.post@insert'
 ));
 
 Route::get('admin/post/update', array(
-    'uses'      => 'content::admin.blog@update'
+    'uses'      => 'content::admin.post@update'
 ));
 
 /* Categories

@@ -1,9 +1,9 @@
 <?php
 
 $navtabs = [
-    'post'          => ['icon-book','Posting'],
-    'categories'    => ['icon-archive','Categories'],
-    'tags'          => ['icon-tag-fill','Tags']
+    'post'          => ['icon-newspaper', __('content::admin.nav.post')],
+    'categories'    => ['icon-archive',__('content::admin.nav.category')],
+    'tags'          => ['icon-tag-fill',__('content::admin.nav.tag')]
 ];
 
 ?>

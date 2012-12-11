@@ -1,7 +1,7 @@
 @layout('themes::admin.main')
 
 @section('title')
-Content Management
+{{ __($module.'title.index') }}
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@ Content Management
     </div>
     <div class="span10">
         <div class="pagehead">
-            <h1>Content Management</h1>
+            <h1>{{ __($module.'title.index') }}</h1>
         </div>
         <div class="pull-right">
-            {{ HTML::link('/admin/post/insert?sidebar=content','<i class="icon-feather"></i> New Post', array('class'=>'btn btn-primary')) }}
+            {{ HTML::link('/admin/post/insert','<i class="icon-feather"></i> '. __($module.'btn.insert'), array('class'=>'btn btn-primary')) }}
         </div>
         @include('content::admin.navtabs')
     </div>

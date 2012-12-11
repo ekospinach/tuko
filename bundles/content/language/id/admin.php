@@ -2,25 +2,37 @@
 
 return array(
     'nav' => array(
-        'post'      => 'Post',
+        'post'      => 'Berita',
         'category'  => 'Kategori',
-        'tag'       => 'Tandai'
+        'tag'       => 'Tag'
     ),
 
-    'post'  => array(
+    'post' => array(
         'title' => array(
-            'insert'    => 'Tambahkan Post Baru',
-            'update'    => 'Perbaharui Post',
-            'delete'    => 'Hapus Post'
+            'index'     => 'Pengaturan Berita',
+            'insert'    => 'Berita Baru',
+            'update'    => 'Perbaharui Berita',
+            'delete'    => 'Hapus Berita',
+            'confirm'   => 'Anda yakin akan menghapus berita'
         ),
-        'field'
+        'field' => array(
+
+            //
+
+        ),
+        'btn' => array(
+            'insert' => 'Tambahkan Berita',
+            'update' => 'Perbaharui Berita',
+            'delete' => 'Hapus Berita'
+        )
     ),
     'categories' => array(
         'title' => array(
             'index'     => 'Pengaturan Kategori',
-            'insert'    => 'Tambahkan Kategori Baru',
+            'insert'    => 'Kategori Baru',
             'update'    => 'Perbaharui Kategori',
-            'delete'    => 'Hapus Kategori'
+            'delete'    => 'Hapus Kategori',
+            'confirm'   => 'Anda yakin akan menghapus kategori'
         ),
         'field' => array(
             'name' => array(
