@@ -98,7 +98,7 @@
             </div>
         </div>
 
-        <div class="form-actions">
+        <div class="form-actions" style="padding-left:30px;">
             <button type="button" class="btn btn-success">Simpan</button>
         </div>
 

@@ -26,9 +26,9 @@
             background-color: rgb(255, 255, 255);
         }
         .bubble-content {
-            padding-left: 40px;
-            padding-right: 40px;
-            padding-bottom: 40px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
         }
         .bubble-content h4.title {
             font-size: 14px;
@@ -37,9 +37,9 @@
         }
 
         .bubble-content .form-actions {
-            margin-right: -40px;
-            margin-left: -40px;
-            margin-bottom: -40px;
+            margin-right: -30px;
+            margin-left: -30px;
+            margin-bottom: -30px;
         }
         .content-preview {
             padding-top: 25px;
