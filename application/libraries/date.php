@@ -28,7 +28,7 @@ class Date {
                 $arr[$x] = $x;
             }
         } elseif ($tipe === 'year') {
-            for ($x = date('Y') - 50; $x <= date('Y') - 16; $x++) {
+            for ($x = date('Y'); $x <= date('Y') + 2; $x++) {
                 $arr[$x] = $x;
             }
         }

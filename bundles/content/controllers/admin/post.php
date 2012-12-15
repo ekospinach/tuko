@@ -18,6 +18,7 @@ class Content_Admin_Post_Controller extends Base_Controller {
 
     public function action_insert()
     {
+        $this->data['categories'] = Term::where('type','=','category')->get();
         return view($this->module.'insert', $this->data);
     }
 }
