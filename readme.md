@@ -4,8 +4,8 @@ Project Status NightLy
 
 ## Some Screenshoot
 
-![Awesome Posting Editor Using Redactor](capture/post-editor.png "Posting Editor")
+![Awesome Posting Editor Using Redactor](https://raw.github.com/purwandi/tuko/master/capture/post-editor.png "Posting Editor")
 
-![Awesome Posting Preview](capture/post-preview.png "Posting Preview")
+![Awesome Posting Preview](https://raw.github.com/purwandi/tuko/master/capture/post-preview.png "Posting Preview")
 
-![Awesome Posting Setting](capture/post-setting.png "Posting Setting")
+![Awesome Posting Setting](https://raw.github.com/purwandi/tuko/master/capture/post-setting.png "Posting Setting")
