@@ -1,6 +1,6 @@
 {{ Form::token() }}
 <div class="tab-content">
-    <div class="tab-pane fade bubble-content" id="write">
+    <div class="tab-pane fade in active bubble-content" id="write">
         <div id="content-editor">
             <div class="control-group">
                 <label class="control-label" for="title">
@@ -8,10 +8,6 @@
                 </label>
                 <div class="controls">
                     <input type="text" id="title" name="title" placeholder="{{ __($module.'field.title.placeholder') }}" class="input-block-level">
-                    <!--
-                    <span class="help-block">
-                        {{ __($module.'field.title.help') }}
-                    </span> -->
                 </div>
             </div>
 
@@ -32,23 +28,10 @@
 
         </div>
     </div>
-    <div class="tab-pane fade in active bubble-content" id="settings">
+    <div class="tab-pane fade bubble-content" id="settings">
         <div class="row-fluid">
             <div class="span5">
                 <h4 class="title">Publish</h4>
-
-                <!--
-                <div class="control-group">
-                    <label class="control-label" for="slug">
-                        {{ __($module.'field.slug.label') }}
-                    </label>
-                    <div class="controls">
-                        <input type="text" id="slug" name="slug" placeholder="{{ __($module.'field.slug.placeholder') }}">
-                        <span class="help-block">
-                            {{ __($module.'field.slug.help') }}
-                        </span>
-                    </div>
-                </div> -->
 
                 <div class="control-group">
                     <label class="control-label" for="status">
@@ -79,14 +62,6 @@
                         {{ __($module.'field.created.label') }}
                     </label>
                     <div class="controls">
-                        <!--
-                        <div id="created-default">
-                            <strong>{{ Lang::line($module.'field.created.placeholder')->get() }}</strong>
-                            <span>
-                                <a href="#" id="update-created">Edit</a>
-                            </span>
-                        </div>
-                        -->
                         <div id="">
                             {{ Form::select('date[month]', __('content::date.month')->get(),date('m'), array('class'=>'span3')) }}
                             {{ Form::text('date[day]',date('d'), array('style'=>'width:20px')) }}

@@ -21,14 +21,14 @@
         }
         .bubble-inner {
             min-height: 60px;
-            padding-top: 10px;
+            padding-top: 20px;
             border: 1px solid rgb(202, 202, 202);
             background-color: rgb(255, 255, 255);
         }
         .bubble-content {
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-bottom: 10px;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 40px;
         }
         .bubble-content h4.title {
             font-size: 14px;
@@ -37,10 +37,31 @@
         }
 
         .bubble-content .form-actions {
-            margin-right: -10px;
-            margin-left: -10px;
-            margin-bottom: -10px;
+            margin-right: -40px;
+            margin-left: -40px;
+            margin-bottom: -40px;
         }
+        .content-preview {
+            padding-top: 25px;
+        }
+        .content-preview h1,
+        .content-preview h2,
+        .content-preview h3,
+        .content-preview h4,
+        .content-preview h5 {
+            font-weight: normal;
+        }
+        .post-title {
+            font-size: 30px;
+            line-height:26px;
+            margin-bottom: 20px;
+        }
+        .post-body, .post-body p,
+        .post-body li {
+            font-size: 14px;
+            line-height:20px;
+        }
+
 
     </style>
 @endsection
@@ -61,10 +82,10 @@
         <div class="bubble-container">
             <div class="bubble-inner">
                 <ul class="nav nav-tabs">
-                    <li>&nbsp;&nbsp;&nbsp;</li>
-                    <li><a href="#write" data-toggle="tab">Write</a></li>
-                    <li><a href="#preview" data-toggle="tab">Preview</a></li>
-                    <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li class="active"><a href="#write" data-toggle="tab" id="tab-write">Write</a></li>
+                    <li><a href="#preview" data-toggle="tab" id="tab-preview">Preview</a></li>
+                    <li><a href="#settings" data-toggle="tab" id="tab-settings">Settings</a></li>
                 </ul>
 
                 @include ($module.'_insert')
@@ -82,6 +103,18 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('.redactor').redactor({ autoresize: true });
+
+            $('#tab-preview').on('click', function(){
+                contentTitle = $('#title').val();
+                contentBody  = $('#content').val();
+
+                if (contentTitle == '' || contentBody == '') {
+                    alert ('Please add your title or body');
+                    return false;
+                } else {
+                    $('.content-preview').html('<div class="post-title">'+contentTitle+'</div>' + '<div class="post-body">' + contentBody + '</div>');
+                }
+            });
         });
     </script>
 @endsection
