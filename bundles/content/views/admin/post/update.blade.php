@@ -1,7 +1,7 @@
 @layout('themes::admin.main')
 
 @section('title')
-{{ __($module.'title.insert') }}
+{{ __($module.'title.update') }}
 @endsection
 
 @section('css')
@@ -33,7 +33,7 @@
 
                 {{ Form::open(NULL,NULL,array('id'=>'form-post')) }}
                 <div id="error-post"></div>
-                @include ($module.'_insert')
+                @include ($module.'_update')
                 {{ Form::close() }}
             </div>
         </div>

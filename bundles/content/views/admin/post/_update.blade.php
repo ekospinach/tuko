@@ -7,7 +7,7 @@
                     {{ __($module.'field.title.label') }}
                 </label>
                 <div class="controls">
-                    <input type="text" id="title" name="title" placeholder="{{ __($module.'field.title.placeholder') }}" class="input-block-level">
+                    <input type="text" id="title" value="{{ $post->title }}" name="title" placeholder="{{ __($module.'field.title.placeholder') }}" class="input-block-level">
                 </div>
             </div>
 
@@ -16,7 +16,7 @@
                     {{ __($module.'field.content.label') }}
                 </label>
                 <div class="controls">
-                    <textarea class="redactor" id="content" name="content" placeholder="{{ __($module.'field.content.placeholder') }}" style="height: 200px;"></textarea>
+                    <textarea class="redactor" id="content" name="content" placeholder="{{ __($module.'field.content.placeholder') }}" style="height: 200px;">{{ $post->content }}</textarea>
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
                         {{ __($module.'field.status.label') }}
                     </label>
                     <div class="controls">
-                        {{ Form::select('status', Lang::line($module.'field.status.placeholder')->get() ) }}
+                        {{ Form::select('status', Lang::line($module.'field.status.placeholder')->get(), $post->status ) }}
                         <span class="help-block">
                             {{ __($module.'field.status.help') }}
                         </span>
@@ -50,7 +50,7 @@
                         {{ __($module.'field.comment.label') }}
                     </label>
                     <div class="controls">
-                        {{ Form::select('comment', Lang::line($module.'field.comment.placeholder')->get() ) }}
+                        {{ Form::select('comment', Lang::line($module.'field.comment.placeholder')->get(), $post->comment ) }}
                         <span class="help-block">
                             {{ __($module.'field.comment.help') }}
                         </span>

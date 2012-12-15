@@ -8,7 +8,15 @@ Route::group(array('before'=>'auth'), function()
      ---------------------------------------------------- */
     Route::get('admin/post', 'content::admin.post@index');
     Route::get('admin/post/insert', 'content::admin.post@insert');
-    Route::get('admin/post/update','content::admin.post@update');
+    Route::post('admin/post/insert', array(
+        'before'    => 'csrf',
+        'uses'      => 'content::admin.post@insert'
+    ));
+    Route::get('admin/post/(:num?)','content::admin.post@update');
+    Route::post('admin/post/(:num?)', array(
+        'before'    => 'csrf',
+        'uses'      => 'content::admin.post@update'
+    ));
 
     /* Categories
      ---------------------------------------------------- */

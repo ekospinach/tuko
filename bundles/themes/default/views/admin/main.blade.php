@@ -28,6 +28,8 @@
             @yield('content')
         </div>
 
+        @include('themes::admin.footer')
+
         @section('js')
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="{{ URL::base() }}/js/jquery.js"><\/script>')</script>

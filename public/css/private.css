@@ -257,6 +257,71 @@ ul.nav-jewel li a:hover {
   border-bottom: 2px solid #cfdce8;
 }
 
+/* Bubble container
+-------------------------------------------------- */
+#content-editor input[type="text"]{
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+.bubble-container {
+  padding: 3px;
+  background: none repeat scroll 0% 0% rgb(238, 238, 238);
+  border-radius: 3px 3px 3px 3px;
+}
+.bubble-inner {
+  min-height: 60px;
+  padding-top: 20px;
+  border: 1px solid rgb(202, 202, 202);
+  background-color: rgb(255, 255, 255);
+}
+.bubble-content {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+.bubble-content h4.title {
+  font-size: 14px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(202, 202, 202);
+}
+
+.bubble-content .form-actions {
+  margin-right: -30px;
+  margin-left: -30px;
+  margin-bottom: -30px;
+}
+.content-preview {
+  padding-top: 10px;
+}
+.content-preview h1,
+.content-preview h2,
+.content-preview h3,
+.content-preview h4,
+.content-preview h5 {
+  font-weight: normal;
+}
+.post-title {
+  font-size: 30px;
+  line-height:36px;
+  margin-bottom: 20px;
+}
+.post-body, .post-body p,
+.post-body li {
+  font-size: 14px;
+  line-height:20px;
+}
+
+form#form-post {
+  margin-bottom: 0px;
+}
+.bubble-container.alert {
+  border-radius: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
 /* Blog
 -------------------------------------------------- */
 .blog-post {
