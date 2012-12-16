@@ -22,7 +22,7 @@ class Content_Admin_Post_Controller extends Base_Controller {
      */
     public function get_index()
     {
-        $this->data['posts'] = Post::with('user')->get();
+        $this->data['posts']        = Post::with(array('user','termpost','termpost.term'))->get();
         return view($this->module.'index', $this->data);
     }
 
@@ -53,16 +53,7 @@ class Content_Admin_Post_Controller extends Base_Controller {
             ));
         } else {
             $post = new Post;
-            $post->title    = Input::get('title');
-            $post->content  = Input::get('content');
-            $post->status   = Input::get('status');
-            $post->comment  = Input::get('comment');
-            $post->user_id  = Auth::user()->id;
-            $post->slug     = Str::slug(Input::get('title'));
-
-            if (Input::get('status') == 'publish') {
-                $post->created_at  = Input::get('year').'-'.Input::get('month').'-'.Input::get('day').' '.Input::get('hour').':'.Input::get('min').':00';
-            }
+            $this->posting($post);
 
             if ($post->save()) {
                 return Response::SysOk(array(
@@ -83,9 +74,25 @@ class Content_Admin_Post_Controller extends Base_Controller {
      */
     public function get_update($id)
     {
-        $this->data['post']         = Post::find($id);
-        $this->data['categories']   = Term::where('type','=','category')->get();
-        return view($this->module.'update', $this->data);
+        $post   = Post::find($id);
+
+        if ($post) {
+            // terminologi
+            $terms = Termpost::where('post_id','=',$id)->get();
+            $arr = [];
+            if ($terms) {
+                foreach ($terms as $term) {
+                    $arr[$term->terms_id] = $term->terms_id;
+                }
+            }
+
+            $this->data['post']         = $post;
+            $this->data['categories']   = Term::where('type','=','category')->get();
+            $this->data['terms']        = $arr;
+            return view($this->module.'update', $this->data);
+        } else {
+            return Redirect::to('admin/post/');
+        }
     }
 
     /**
@@ -106,17 +113,8 @@ class Content_Admin_Post_Controller extends Base_Controller {
             $post = Post::find($id);
 
             if ($post) {
-                $post->title    = Input::get('title');
-                $post->content  = Input::get('content');
-                $post->status   = Input::get('status');
-                $post->comment  = Input::get('comment');
-                $post->user_id  = Auth::user()->id;
-                $post->slug     = Str::slug(Input::get('title'));
-                $post->updated_at = date('Y-m-d H:i:s');
 
-                if (Input::get('status') == 'publish') {
-                    $post->created_at  = Input::get('year').'-'.Input::get('month').'-'.Input::get('day').' '.Input::get('hour').':'.Input::get('min').':00';
-                }
+                $this->posting($post);
 
                 if ($post->save()) {
                     return Response::SysOk(array(
@@ -129,9 +127,36 @@ class Content_Admin_Post_Controller extends Base_Controller {
                 }
             } else {
                 return Response::SysError(array(
-                    'html'  => 'Spry this record is not found'
+                    'html'  => 'Sory this record is not found'
                 ));
             }
         }
+    }
+
+    /**
+     * Posting set
+     *
+     * @param  object $post
+     * @return object
+     */
+    private function posting($post)
+    {
+        $post->title    = Input::get('title');
+        $post->content  = Input::get('content');
+        $post->status   = Input::get('status');
+        $post->comment  = Input::get('comment');
+        $post->type     = 'post';
+        $post->user_id  = Auth::user()->id;
+        $post->slug     = Str::slug(Input::get('title'));
+        $post->updated_at = date('Y-m-d H:i:s');
+
+        if (Input::get('status') == 'publish') {
+            $post->created_at  = Input::get('year').'-'.Input::get('month').'-'.Input::get('day').' '.Input::get('hour').':'.Input::get('min').':00';
+        }
+
+        // event fire
+        Event::fire('tukocms.posting.update', array($post->id, Input::get('term_id')));
+
+        return $post;
     }
 }

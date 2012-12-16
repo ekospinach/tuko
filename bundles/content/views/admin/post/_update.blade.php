@@ -84,7 +84,11 @@
                     @if ($categories)
                         @foreach ($categories as $cat)
                         <label class="checkbox">
-                            {{ Form::checkbox('term_id', $cat->id) }}
+                            @if (array_key_exists($cat->id, $terms))
+                                {{ Form::checkbox('term_id[]', $cat->id, true) }}
+                            @else
+                                {{ Form::checkbox('term_id[]', $cat->id) }}
+                            @endif
                             {{ $cat->name }}
                         </label>
                         @endforeach

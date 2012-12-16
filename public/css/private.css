@@ -316,7 +316,7 @@ ul.nav-jewel li a:hover {
 form#form-post {
   margin-bottom: 0px;
 }
-.bubble-container.alert {
+.bubble-container .alert {
   border-radius: 0px;
   border-left: 0px;
   border-right: 0px;

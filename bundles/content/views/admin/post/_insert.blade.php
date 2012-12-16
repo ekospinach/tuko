@@ -84,7 +84,7 @@
                     @if ($categories)
                         @foreach ($categories as $cat)
                         <label class="checkbox">
-                            {{ Form::checkbox('term_id', $cat->id) }}
+                            {{ Form::checkbox('term_id[]', $cat->id) }}
                             {{ $cat->name }}
                         </label>
                         @endforeach

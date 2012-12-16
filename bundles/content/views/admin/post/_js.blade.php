@@ -24,7 +24,7 @@
                 success: function(response) {
                     if (response.code == '500') {
 
-                        error.removeClass().addClass('alert alert-error').html(btnClose + response.data.html);
+                        error.removeClass().removeAttr('style').addClass('alert alert-error').html(btnClose + response.data.html);
 
                         window.setTimeout(function(){
                             error.fadeOut(200);
@@ -32,7 +32,7 @@
 
                     } else {
 
-                        error.removeClass().addClass('alert alert-success').html(btnClose + response.data.html);
+                        error.removeClass().removeAttr('style').addClass('alert alert-success').html(btnClose + response.data.html);
 
                         window.setTimeout(function(){
                             window.location.href = '/admin/content';

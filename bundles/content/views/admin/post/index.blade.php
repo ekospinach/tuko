@@ -33,7 +33,11 @@
                     <tr>
                         <td>{{ HTML::link('/admin/post/'.$post->id, $post->title) }}</td>
                         <td>{{ $post->user->nicename }}</td>
-                        <td>data</td>
+                        <td>
+                            @foreach($post->termpost as $termpost)
+                                {{ $termpost->term->name }},
+                            @endforeach
+                        </td>
                         <td>{{ $post->created_at != '0000-00-00 00:00:00' ? date('Y/m/d', strtotime($post->created_at)) : '-' }}</td>
                     </tr>
                 @endforeach

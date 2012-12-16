@@ -20,4 +20,9 @@ class Post extends Eloquent {
     {
         return $this->belongs_to('User');
     }
+
+    public function termpost()
+    {
+        return $this->has_many('Termpost');
+    }
 }
