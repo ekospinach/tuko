@@ -24,7 +24,7 @@ class Content_Create_Term_Post {
 	 */
 	public function down()
 	{
-		Schema::table('term_post', function($table)
+		Schema::table('terms_post', function($table)
 		{
 			$table->drop();
 		});

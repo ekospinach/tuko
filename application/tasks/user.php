@@ -36,9 +36,14 @@ class User_Task {
             DB::table('users')->insert(array(
                 'username' => $name,
                 'display_name' => $name,
+                'nicename' => 'Purwandi',
+                'url'   => 'http://purwandi.me',
                 'password' => $key,
                 'email' => $email,
-                'role' => '1' // for admin
+                'role' => '1', // for admin
+                'activation_key' => NULL,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ));
 
             echo "\nSuccessfully insert\n";

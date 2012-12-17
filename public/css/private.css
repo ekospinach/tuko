@@ -265,6 +265,12 @@ ul.nav-jewel li a:hover {
   margin-bottom: 15px;
   padding: 7px 9px;
 }
+.animated {
+  vertical-align: top;
+  transition: height 0.2s;
+  -webkit-transition: height 0.2s;
+  -moz-transition: height 0.2s;
+}
 .bubble-container {
   padding: 3px;
   background: none repeat scroll 0% 0% rgb(238, 238, 238);

@@ -17,6 +17,7 @@ Route::group(array('before'=>'auth'), function()
         'before'    => 'csrf',
         'uses'      => 'content::admin.post@update'
     ));
+    Route::post('admin/post/preview','content::admin.post@preview');
 
     /* Categories
      ---------------------------------------------------- */
@@ -40,3 +41,6 @@ Route::group(array('before'=>'auth'), function()
      ---------------------------------------------------- */
     Route::get('admin/tags', 'content::admin.tags@index');
 });
+
+Route::get('/','content::blog@index');
+Route::get('(:num)-(:any)','content::blog@read');

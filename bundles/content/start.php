@@ -11,7 +11,7 @@ Event::listen('tukocms.posting.update', function($post, $terms)
         $term->delete();
     }
 
-    if (count($term) > 0) {
+    if (count($terms) > 0) {
         foreach ($terms as $term) {
             DB::table('terms_post')->insert(array(
                 'terms_id'  => $term,

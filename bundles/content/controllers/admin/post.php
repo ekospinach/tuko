@@ -56,6 +56,10 @@ class Content_Admin_Post_Controller extends Base_Controller {
             $this->posting($post);
 
             if ($post->save()) {
+
+                // event fire
+                Event::fire('tukocms.posting.update', array($post->id, Input::get('term_id')));
+
                 return Response::SysOk(array(
                     'html'  => 'Simpan data berhasil :)'
                 ));
@@ -117,6 +121,9 @@ class Content_Admin_Post_Controller extends Base_Controller {
                 $this->posting($post);
 
                 if ($post->save()) {
+                    // event fire
+                    Event::fire('tukocms.posting.update', array($post->id, Input::get('term_id')));
+
                     return Response::SysOk(array(
                         'html'  => 'Simpan data berhasil :)'
                     ));
@@ -131,6 +138,18 @@ class Content_Admin_Post_Controller extends Base_Controller {
                 ));
             }
         }
+    }
+
+    /**
+     * Posting Preview Markdown
+     *
+     * @return json
+     */
+    public function post_preview()
+    {
+        return Response::SysOk(array(
+            'html' => HTML::markdown(Input::get('content'))
+        ));
     }
 
     /**
@@ -153,9 +172,6 @@ class Content_Admin_Post_Controller extends Base_Controller {
         if (Input::get('status') == 'publish') {
             $post->created_at  = Input::get('year').'-'.Input::get('month').'-'.Input::get('day').' '.Input::get('hour').':'.Input::get('min').':00';
         }
-
-        // event fire
-        Event::fire('tukocms.posting.update', array($post->id, Input::get('term_id')));
 
         return $post;
     }

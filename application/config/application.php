@@ -67,7 +67,7 @@ return array(
 	|
 	*/
 
-	'profiler' => true,
+	'profiler' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -185,7 +185,7 @@ return array(
 		#'Response'   	=> 'Laravel\\Response',
 		'Route'      	=> 'Laravel\\Routing\\Route',
 		'Router'     	=> 'Laravel\\Routing\\Router',
-		'Schema'     	=> 'MyDatabase\\Schema',
+		'Schema'     	=> 'Database\\Schema',
 		#'Schema'     	=> 'Laravel\\Database\\Schema',
 		'Section'    	=> 'Laravel\\Section',
 		'Session'    	=> 'Laravel\\Session',

@@ -1,6 +1,8 @@
 <script type="text/javascript">
     $(document).ready(function() {
-        $('.redactor').redactor({ autoresize: true });
+
+        $(".tabby").tabby({tabString:'    '}).autosize({append: "\n"});
+
         // preview post
         $('#tab-preview').on('click', function(){
             contentTitle = $('#title').val();
@@ -10,7 +12,22 @@
                 alert ('Please add your title or body');
                 return false;
             } else {
-                $('.content-preview').html('<div class="post-title">'+contentTitle+'</div>' + '<div class="post-body">' + contentBody + '</div>');
+                $.ajax({
+                    type: 'POST',
+                    url: '/admin/post/preview',
+                    data: { content: contentBody, crsf_token: "{{ Session::token() }}"},
+                    dataType: 'json',
+                    success: function(response){
+                        if (response.code == '200') {
+                            $('.content-preview').html('<div class="post-title">'+contentTitle+'</div>' + '<div class="post-body">' + response.data.html + '</div>');
+                        } else {
+
+                        }
+                    }
+
+                });
+
+
             }
         });
         // save post

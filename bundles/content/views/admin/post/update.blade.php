@@ -45,6 +45,7 @@
 @section('js')
     @parent
     {{ HTML::script('js/jquery.form.js') }}
-    {{ HTML::script('js/redactor/redactor.min.js') }}
+    {{ HTML::script('js/jquery.textarea.min.js') }}
+    {{ HTML::script('js/autosize/jquery.autosize-min.js') }}
     @include($module.'_js')
 @endsection

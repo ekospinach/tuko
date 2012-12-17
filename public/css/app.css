@@ -1,0 +1,152 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Article
+-------------------------------------------------- */
+.article {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #EDEDED;
+  padding-bottom: 20px;
+}
+.article h1{font-size:28px}
+.article h2{font-size:24px}
+.article h3{font-size:22px}
+.article h4{font-size:20px}
+.article h5{font-size:18px}
+.article h6{font-size:16px}
+
+.article:last-child {
+  border-bottom: none;
+}
+.article-title a {
+  color: #000000;
+}
+.article-content {
+  padding-top: 20px;
+}
+.article-content,
+.article-content li {
+  font-size: 15px;
+  line-height: 1.4;
+}
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5 {
+  font-weight: normal;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -165px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 165px;
+}
+
+/* Footer
+-------------------------------------------------- */
+.footer-inner {
+  color: #777777;
+  height: 139px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  text-shadow: 0px 1px 0px #ffffff;
+  background-color: #f5f5f5;
+  background-color: #F5F5F5;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer-inner .sitemap dl dt {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #52595d;
+}
+
+.footer-inner .sitemap dl dd + dt {
+  margin-top: 18px;
+}
+
+.footer-inner .sitemap dl dd {
+  margin-left: 0;
+}
+
+.footer-inner .footer-divider {
+  margin: 0 0px 20px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+
+.footer-inner ul.meta-footer {
+  margin: 0;
+  list-style: none outside none;
+}
+
+.footer-inner ul.meta-footer li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.footer-inner ul.meta-footer a:hover {
+  text-decoration: none;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer, .footer-inner {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Unfloat the back to top link in footer */
+  .footer-inner .pull-right {
+    float: none;
+  }
+}
+
+/* Responsive Docs
+-------------------------------------------------- */
+@media (max-width: 480px) {
+
+  /* Change up some type stuff */
+  h1 {
+    margin-top: 30px;
+  }
+  h2 {
+    margin-top: 27px;
+  }
+  h2 small {
+    display: block;
+    line-height: 18px;
+  }
+  h3 {
+    margin-top: 18px;
+  }
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+}
+.container .credit {
+  margin: 20px 0;
+}

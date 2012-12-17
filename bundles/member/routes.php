@@ -12,4 +12,3 @@ Route::post('session', array(
     'before'=> 'csrf',
     'uses'  => 'member::session@store'
 ));
-
