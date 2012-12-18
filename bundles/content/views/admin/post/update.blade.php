@@ -4,11 +4,6 @@
 {{ __($module.'title.update') }}
 @endsection
 
-@section('css')
-    @parent
-    {{ HTML::style('js/redactor/css/redactor.css') }}
-@endsection
-
 @section('content')
 <div class="row">
     <div class="span2">

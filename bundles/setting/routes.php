@@ -2,5 +2,5 @@
 
 Route::group(array('before'=> 'auth'), function()
 {
-    Route::get('setting', 'setting::admin.setting@index');
+    Route::get('admin/setting', 'setting::setting@index');
 });

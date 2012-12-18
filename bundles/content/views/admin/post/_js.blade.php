@@ -20,6 +20,7 @@
                     success: function(response){
                         if (response.code == '200') {
                             $('.content-preview').html('<div class="post-title">'+contentTitle+'</div>' + '<div class="post-body">' + response.data.html + '</div>');
+                            window.prettyPrint && prettyPrint();
                         } else {
 
                         }

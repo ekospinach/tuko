@@ -11,6 +11,7 @@
         @section('css')
             {{ HTML::style('css/bootstrap.min.css') }}
             {{ HTML::style('css/responsive.min.css') }}
+            {{ HTML::style('js/google-code-prettify/prettify.css') }}
             {{ HTML::style('css/icon.css') }}
             {{ HTML::style('css/app.css') }}
         @yield_section
@@ -63,6 +64,13 @@
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="{{ URL::base() }}/js/jquery.js"><\/script>')</script>
             {{ HTML::script('js/bootstrap.min.js') }}
+            {{ HTML::script('js/google-code-prettify/prettify.js') }}
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    // make code pretty
+                    window.prettyPrint && prettyPrint();
+                });
+            </script>
         @yield_section
     </body>
 </html>

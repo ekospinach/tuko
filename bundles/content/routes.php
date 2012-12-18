@@ -43,4 +43,8 @@ Route::group(array('before'=>'auth'), function()
 });
 
 Route::get('/','content::blog@index');
+Route::any('robots.txt', function()
+{
+    return 'User-agent: *';
+});
 Route::get('(:num)-(:any)','content::blog@read');

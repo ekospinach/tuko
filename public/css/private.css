@@ -328,6 +328,23 @@ form#form-post {
   border-right: 0px;
 }
 
+/* Pre Code
+-------------------------------------------------- */
+pre {
+  border-radius: 0px;
+  border: 1px solid rgb(202, 202, 202);
+}
+pre.prettyprint,
+pre.prettyprint li,
+pre.prettyprint li span {
+  font-family: "Consolas","Liberation Mono","Courier","monospace";
+  font-size: 12px;
+  line-height: 16px;
+  vertical-align: baseline;
+  background: transparent;
+  letter-spacing: normal;
+}
+
 /* Blog
 -------------------------------------------------- */
 .blog-post {
