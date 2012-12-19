@@ -16,7 +16,7 @@
                     {{ __($module.'field.content.label') }}
                 </label>
                 <div class="controls">
-                    <textarea class="tabby input-block-level animated" id="content" name="content" placeholder="{{ __($module.'field.content.placeholder') }}" style="height: 200px;">{{ $post->content }}</textarea>
+                    <textarea class="tabby input-block-level animated" id="content" name="content" placeholder="{{ __($module.'field.content.placeholder') }}" style="height: 200px;">{{ HTML::decode($post->content) }}</textarea>
                     <p class="drag-and-drop">
                         <span class="default">
                             Attach images by dragging &amp; dropping them or

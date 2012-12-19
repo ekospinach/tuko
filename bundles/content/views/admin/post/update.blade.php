@@ -5,43 +5,6 @@
 @endsection
 
 @section('content')
-    @parent
-    <style type="text/css">
-        .upload-enabled textarea {
-            border-bottom: 1px dashed rgb(221, 221, 221);
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
-            background: none repeat scroll 0% 0% rgb(250, 250, 250);
-            margin-bottom: 0px;
-        }
-        .drag-and-drop {
-            margin: 0px;
-            padding: 7px 10px;
-            color: rgb(170, 170, 170);
-            height: 16px;
-            font-size: 12px;
-            line-height: 16px;
-            background: none repeat scroll 0% 0% rgb(250, 250, 250);
-            border-right: 1px solid rgb(204, 204, 204);
-            border-width: medium 1px 1px;
-            border-style: none solid solid;
-            border-color: -moz-use-text-color rgb(204, 204, 204) rgb(204, 204, 204);
-            border-image: none;
-            border-bottom-left-radius: 3px;
-            border-bottom-right-radius: 3px;
-        }
-        .drag-and-drop .input[type="file"] {
-            position: absolute;
-            width: 240px;
-            margin: 0px;
-            opacity: 0.0001;
-            cursor: pointer;
-            font-size: 12px;
-        }
-    </style>
-@endsection
-
-@section('content')
 <div class="row">
     <div class="span2">
         @include('themes::admin.sidebar')

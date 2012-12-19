@@ -57,6 +57,7 @@ class HTML extends \Laravel\HTML {
     {
         $m = new \Markdown\Extra;
         return $m->transform($text);
+        //return str_replace(['&lt;pre','&lt;/pre&gt;'], ['<pre','</pre>'], $text);
     }
 
     /**

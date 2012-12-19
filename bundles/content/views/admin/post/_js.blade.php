@@ -62,7 +62,6 @@
         });
 
         $fub = $('.manual-file-chooser-text');
-        $messages = $('#messages');
 
         var uploader = new qq.FineUploaderBasic({
             button: $fub[0],
@@ -76,39 +75,20 @@
                 multiple: false,
             },
             callbacks: {
-                onSubmit: function(id, fileName) {
-                    // $messages.append('<div id="file-' + id + '" class="alert" style="margin: 20px 0 0"></div>');
-                },
                 onUpload: function(id, fileName) {
                     $('span.default').addClass('hide');
                     $('span.loading').removeClass('hide');
-                    // $('#file-' + id).addClass('alert-info').html('<img src="client/loading.gif" alt="Initializing. Please hold."> ' + 'Initializing ' + '“' + fileName + '”');
                 },
-                /*
-                onProgress: function(id, fileName, loaded, total) {
-                    if (loaded < total) {
-                        progress = Math.round(loaded / total * 100) + '% of ' + Math.round(total / 1024) + ' kB';
-                        $('#file-' + id).removeClass('alert-info').html('<img src="client/loading.gif" alt="In progress. Please hold."> ' + 'Uploading ' + '“' + fileName + '” ' + progress);
-                    } else {
-                        $('#file-' + id).addClass('alert-info').html('<img src="client/loading.gif" alt="Saving. Please hold."> ' + 'Saving ' + '“' + fileName + '”');
-                    }
-                },*/
                 onComplete: function(id, fileName, response) {
                     if (response.code) {
-                        // $('#content').atCaret('getCaretPosition');
-                        var file = "![Alt text]("+response.data.file+")";
-                        insertAtCaret('content', file);
+                        $('#content').atCaret('insert', "![Alt text]("+response.data.file+")");
                         $('span.loading').addClass('hide');
                         $('span.default').removeClass('hide');
-                        // alert(response.data.file);
                     } else {
                         $('span.loading').addClass('hide');
                     }
                 }
-            },
-            debug: true
+            }
         });
-
-        function insertAtCaret(areaId,text) { var txtarea = document.getElementById(areaId); var scrollPos = txtarea.scrollTop; var strPos = 0; var br = ((txtarea.selectionStart || txtarea.selectionStart == '0') ? "ff" : (document.selection ? "ie" : false ) ); if (br == "ie") { txtarea.focus(); var range = document.selection.createRange(); range.moveStart ('character', -txtarea.value.length); strPos = range.text.length; } else if (br == "ff") strPos = txtarea.selectionStart; var front = (txtarea.value).substring(0,strPos); var back = (txtarea.value).substring(strPos,txtarea.value.length); txtarea.value=front+text+back; strPos = strPos + text.length; if (br == "ie") { txtarea.focus(); var range = document.selection.createRange(); range.moveStart ('character', -txtarea.value.length); range.moveStart ('character', strPos); range.moveEnd ('character', 0); range.select(); } else if (br == "ff") { txtarea.selectionStart = strPos; txtarea.selectionEnd = strPos; txtarea.focus(); } txtarea.scrollTop = scrollPos; }
     });
 </script>
