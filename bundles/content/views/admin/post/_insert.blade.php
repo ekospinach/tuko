@@ -11,15 +11,41 @@
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group js-uploadable-container upload-enabled">
                 <label class="control-label" for="content">
                     {{ __($module.'field.content.label') }}
                 </label>
                 <div class="controls">
                     <textarea class="tabby input-block-level animated" id="content" name="content" placeholder="{{ __($module.'field.content.placeholder') }}" style="height: 200px;"></textarea>
+                    <p class="drag-and-drop">
+                        <span class="default">
+                            Attach images by dragging &amp; dropping them or
+                            <a class="manual-file-chooser-text" href="#">choose an image</a> . The image files less than 5MB
+                        </span>
+                        <span class="loading hide">
+                            <img alt="Octocat-spinner-32" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif?1340659561" height="16" width="16"> Uploading your images now…
+                        </span>
+                        <span class="error failed-request hide">
+                            Something went really wrong and we can't process that image.
+                        </span>
+                    </p>
                 </div>
             </div>
 
+                        <!--
+
+                        <span class="default">
+                            </span>
+                        <span class="loading hide">
+                            <img alt="Octocat-spinner-32" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif?1340659561" height="16" width="16"> Uploading your images now…
+                        </span>
+                        <span class="error bad-file hide">
+                            Unfortunately we don't support that file type yet. Try image files less than 5MB.
+                        </span>
+                        <span class="error failed-request hide">
+                            Something went really wrong and we can't process that image.
+                        </span>
+                        -->
 
         </div>
     </div>

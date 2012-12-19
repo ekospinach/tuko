@@ -18,6 +18,10 @@ Route::group(array('before'=>'auth'), function()
         'uses'      => 'content::admin.post@update'
     ));
     Route::post('admin/post/preview','content::admin.post@preview');
+    Route::post('admin/post/media', array(
+        'before'    => 'crsf',
+        'uses'      => 'content::admin.post@media'
+    ));
 
     /* Categories
      ---------------------------------------------------- */

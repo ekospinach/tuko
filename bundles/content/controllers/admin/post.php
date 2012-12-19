@@ -152,6 +152,34 @@ class Content_Admin_Post_Controller extends Base_Controller {
         ));
     }
 
+    public function post_media()
+    {
+        $rules = [
+            'qqfile' => 'mimes:jpg,gif,png,jpeg|max:5000'
+        ];
+
+        $val = Validator::make(Input::all(), $rules);
+
+        if ($val->fails()) {
+            return Response::SysError(array(
+                'html'  => $val->errors->all()
+            ));
+        } else {
+            $dir     = path('public').'media';
+            $file    = sha1(time()).'.'.File::extension(Input::file('qqfile.name'));
+
+            if (Input::upload('qqfile', $dir, $file)) {
+                return Response::SysOk(array(
+                    'file' => '/media/'.$file
+                ));
+            } else {
+                return Response::SysError();
+            }
+        }
+
+
+    }
+
     /**
      * Posting set
      *
